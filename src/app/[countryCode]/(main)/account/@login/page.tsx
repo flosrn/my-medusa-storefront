@@ -9,7 +9,11 @@ export const metadata: Metadata = {
   description: "Sign in to your Medusa Store account.",
 }
 
-export default function Login() {
+export default function Login({
+  searchParams: { access_token },
+}: {
+  searchParams: { access_token: string }
+}) {
   return (
     <div>
       <a
@@ -34,7 +38,7 @@ export default function Login() {
         </svg>
         Sign in with Google
       </a>
-      <LoginTemplate />
+      <LoginTemplate token={access_token} />
     </div>
   )
 }
