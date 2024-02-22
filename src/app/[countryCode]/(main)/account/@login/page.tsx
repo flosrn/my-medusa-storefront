@@ -1,6 +1,5 @@
-import { Metadata } from "next"
-
 import LoginTemplate from "@modules/account/templates/login-template"
+import { Metadata } from "next"
 
 const MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
 
@@ -9,11 +8,7 @@ export const metadata: Metadata = {
   description: "Sign in to your Medusa Store account.",
 }
 
-export default function Login({
-  searchParams: { access_token },
-}: {
-  searchParams: { access_token: string }
-}) {
+export default function Login() {
   return (
     <div>
       <a
@@ -38,7 +33,7 @@ export default function Login({
         </svg>
         Sign in with Google
       </a>
-      <LoginTemplate token={access_token} />
+      <LoginTemplate />
     </div>
   )
 }
